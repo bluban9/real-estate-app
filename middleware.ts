@@ -13,8 +13,9 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  const secret = process.env.AUTH_SECRET;
   const authCookie = req.cookies.get('auth');
-  if (authCookie?.value === process.env.AUTH_SECRET) {
+  if (secret && authCookie?.value === secret) {
     return NextResponse.next();
   }
 
