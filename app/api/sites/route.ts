@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
 
   const site = await client.execute({
     sql: 'SELECT * FROM sites WHERE id = ?',
-    args: [result.lastInsertRowid],
+    args: [Number(result.lastInsertRowid)],
   });
 
   return NextResponse.json(site.rows[0], { status: 201 });

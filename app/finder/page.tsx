@@ -247,27 +247,27 @@ export default function FinderPage() {
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-wrap items-start gap-x-3 gap-y-1 mb-2">
                           <span className="text-white text-sm font-medium truncate">{String(a.ADDLINE1 || '(No address)')}</span>
-                          {a.MUNNAME && <span className="text-gray-400 text-sm">{String(a.MUNNAME)}</span>}
-                          {a.COUNTY && <span className="text-gray-500 text-sm">{String(a.COUNTY)}</span>}
+                          {a.MUNNAME != null && <span className="text-gray-400 text-sm">{String(a.MUNNAME)}</span>}
+                          {a.COUNTY != null && <span className="text-gray-500 text-sm">{String(a.COUNTY)}</span>}
                         </div>
                         <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
                           <span className="text-gray-400">
                             <span className="text-gray-600">Acres: </span>
                             <span className="text-gray-300">{formatAcreage(a.CALCACRES)}</span>
                           </span>
-                          {a.PROPCLASS && (
+                          {a.PROPCLASS != null && (
                             <span className="text-gray-400">
                               <span className="text-gray-600">Class: </span>
                               <span className="text-gray-300">{String(a.PROPCLASS)}</span>
                             </span>
                           )}
-                          {a.OWNERNAME && (
+                          {a.OWNERNAME != null && (
                             <span className="text-gray-400">
                               <span className="text-gray-600">Owner: </span>
                               <span className="text-gray-300 max-w-xs truncate inline-block align-bottom">{String(a.OWNERNAME)}</span>
                             </span>
                           )}
-                          {a.PAMS_PIN && (
+                          {a.PAMS_PIN != null && (
                             <span className="text-gray-600">PIN: {String(a.PAMS_PIN)}</span>
                           )}
                         </div>
